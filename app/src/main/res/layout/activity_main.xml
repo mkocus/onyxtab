@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/btnNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
+            android:layout_marginEnd="15dp"
+            />
+
+        <Button
+            android:id="@+id/btnEnterFast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter fast"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
+            android:layout_marginEnd="15dp"
+            />
+
+        <Button
+            android:id="@+id/btnExitFast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exit fast"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
+            android:layout_marginEnd="15dp"
+            />
+
+        <Button
+            android:id="@+id/btnRepaint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repaint"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
+            />
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout"
+        />
+
+</RelativeLayout>

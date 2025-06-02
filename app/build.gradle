@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.n7mobile.onyxtab'
+
+    defaultConfig {
+        applicationId "com.n7mobile.onyxtab"
+        minSdk 30
+        compileSdk 35
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    packagingOptions {
+        pickFirst 'lib/*/libc++_shared.so'
+        pickFirst 'androidsupportmultidexversion.txt'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    //noinspection GradleDependency
+    implementation 'com.onyx.android.sdk:onyxsdk-device:1.2.32'
+    implementation 'com.onyx.android.sdk:onyxsdk-pen:1.4.12'
+    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:5.0'
+    implementation 'org.threeten:threetenbp:1.7.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}
